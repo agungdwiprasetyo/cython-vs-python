@@ -2,7 +2,10 @@
 
 Dalam repositori ini akan membandingkan kecepatan eksekusi dari program yang menggunakan Cython dan pure Python.
 
-Seperti yang diketahui bahwa bahasa interpreter seperti python untuk eksekusinya memakan waktu yang cukup lama. Cython adalah versi compilernya dari python yang menggunakan compiler bahasa C seperti GCC dan MinGW. Jadi, bahasa pemrograman interpreter python yang terbilang cukup mudah dapat memiliki performa seperti bahasa C karena dicompile kedalam bahasa mesin.
+Sekarang ini, python merupakan bahasa pemrograman yang cukup populer. Banyak framework dan library yang berhubungan dengan perkembangan teknologi seperti data science dan deep learning menggunakan python, misalnya [TensorFlow](https://www.tensorflow.org/). Seperti yang diketahui bahwa bahasa interpreter seperti python untuk eksekusinya memakan waktu yang cukup lama. Apalagi jika untuk mengolah data yang cukup besar misalnya dalam deep learning, akan memakan lebih banyak sumber daya.
+
+Cython adalah versi compilernya dari python yang menggunakan compiler bahasa C seperti GCC dan MinGW. Jadi, bahasa pemrograman interpreter python yang terbilang cukup mudah dan didukung banyak library seperti deep learning, dapat memiliki performa seperti bahasa C karena dicompile kedalam bahasa mesin.
+
 
 ## Setup
 Versi python yang digunakan adalah versi 3.5 dan sistem operasi yang digunakan adalah Linux 64-bit.
