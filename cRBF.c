@@ -1636,12 +1636,12 @@ static PyObject *__pyx_tuple__19;
 static PyObject *__pyx_tuple__20;
 static PyObject *__pyx_codeobj__15;
 
-/* "cRBF.pyx":4
+/* "cRBF.pyx":6
  * import numpy as np
  * 
  * def rbf_network(double[:, :] X,  double[:] beta, double theta):             # <<<<<<<<<<<<<<
- * 
  *     cdef int N = X.shape[0]
+ *     cdef int D = X.shape[1]
  */
 
 /* Python wrapper */
@@ -1675,16 +1675,16 @@ static PyObject *__pyx_pw_4cRBF_1rbf_network(PyObject *__pyx_self, PyObject *__p
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, 1); __PYX_ERR(0, 4, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, 1); __PYX_ERR(0, 6, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_theta)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, 2); __PYX_ERR(0, 4, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, 2); __PYX_ERR(0, 6, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "rbf_network") < 0)) __PYX_ERR(0, 4, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "rbf_network") < 0)) __PYX_ERR(0, 6, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -1693,13 +1693,13 @@ static PyObject *__pyx_pw_4cRBF_1rbf_network(PyObject *__pyx_self, PyObject *__p
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_X = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[0]); if (unlikely(!__pyx_v_X.memview)) __PYX_ERR(0, 4, __pyx_L3_error)
-    __pyx_v_beta = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1]); if (unlikely(!__pyx_v_beta.memview)) __PYX_ERR(0, 4, __pyx_L3_error)
-    __pyx_v_theta = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_theta == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 4, __pyx_L3_error)
+    __pyx_v_X = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[0]); if (unlikely(!__pyx_v_X.memview)) __PYX_ERR(0, 6, __pyx_L3_error)
+    __pyx_v_beta = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1]); if (unlikely(!__pyx_v_beta.memview)) __PYX_ERR(0, 6, __pyx_L3_error)
+    __pyx_v_theta = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_theta == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 6, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 4, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("rbf_network", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cRBF.rbf_network", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1743,17 +1743,17 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
   Py_ssize_t __pyx_t_19;
   __Pyx_RefNannySetupContext("rbf_network", 0);
 
-  /* "cRBF.pyx":6
- * def rbf_network(double[:, :] X,  double[:] beta, double theta):
+  /* "cRBF.pyx":7
  * 
+ * def rbf_network(double[:, :] X,  double[:] beta, double theta):
  *     cdef int N = X.shape[0]             # <<<<<<<<<<<<<<
  *     cdef int D = X.shape[1]
  *     cdef double[:] Y = np.zeros(N)
  */
   __pyx_v_N = (__pyx_v_X.shape[0]);
 
-  /* "cRBF.pyx":7
- * 
+  /* "cRBF.pyx":8
+ * def rbf_network(double[:, :] X,  double[:] beta, double theta):
  *     cdef int N = X.shape[0]
  *     cdef int D = X.shape[1]             # <<<<<<<<<<<<<<
  *     cdef double[:] Y = np.zeros(N)
@@ -1761,19 +1761,19 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_D = (__pyx_v_X.shape[1]);
 
-  /* "cRBF.pyx":8
+  /* "cRBF.pyx":9
  *     cdef int N = X.shape[0]
  *     cdef int D = X.shape[1]
  *     cdef double[:] Y = np.zeros(N)             # <<<<<<<<<<<<<<
  *     cdef int i, j, d
  *     cdef double r = 0
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_N); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_N); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -1786,14 +1786,14 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -1802,33 +1802,33 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 8, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 9, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_1);
-  if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_Y = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "cRBF.pyx":10
+  /* "cRBF.pyx":11
  *     cdef double[:] Y = np.zeros(N)
  *     cdef int i, j, d
  *     cdef double r = 0             # <<<<<<<<<<<<<<
@@ -1837,7 +1837,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_r = 0.0;
 
-  /* "cRBF.pyx":12
+  /* "cRBF.pyx":13
  *     cdef double r = 0
  * 
  *     for i in range(N):             # <<<<<<<<<<<<<<
@@ -1848,7 +1848,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "cRBF.pyx":13
+    /* "cRBF.pyx":14
  * 
  *     for i in range(N):
  *         for j in range(N):             # <<<<<<<<<<<<<<
@@ -1859,7 +1859,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
     for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
       __pyx_v_j = __pyx_t_10;
 
-      /* "cRBF.pyx":14
+      /* "cRBF.pyx":15
  *     for i in range(N):
  *         for j in range(N):
  *             r = 0             # <<<<<<<<<<<<<<
@@ -1868,7 +1868,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
  */
       __pyx_v_r = 0.0;
 
-      /* "cRBF.pyx":15
+      /* "cRBF.pyx":16
  *         for j in range(N):
  *             r = 0
  *             for d in range(D):             # <<<<<<<<<<<<<<
@@ -1879,7 +1879,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_d = __pyx_t_12;
 
-        /* "cRBF.pyx":16
+        /* "cRBF.pyx":17
  *             r = 0
  *             for d in range(D):
  *                 r += (X[j, d] - X[i, d]) ** 2             # <<<<<<<<<<<<<<
@@ -1899,7 +1899,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
         } else if (unlikely(__pyx_t_14 >= __pyx_v_X.shape[1])) __pyx_t_15 = 1;
         if (unlikely(__pyx_t_15 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_15);
-          __PYX_ERR(0, 16, __pyx_L1_error)
+          __PYX_ERR(0, 17, __pyx_L1_error)
         }
         __pyx_t_16 = __pyx_v_i;
         __pyx_t_17 = __pyx_v_d;
@@ -1914,12 +1914,12 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
         } else if (unlikely(__pyx_t_17 >= __pyx_v_X.shape[1])) __pyx_t_15 = 1;
         if (unlikely(__pyx_t_15 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_15);
-          __PYX_ERR(0, 16, __pyx_L1_error)
+          __PYX_ERR(0, 17, __pyx_L1_error)
         }
         __pyx_v_r = (__pyx_v_r + pow(((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_X.data + __pyx_t_13 * __pyx_v_X.strides[0]) ) + __pyx_t_14 * __pyx_v_X.strides[1]) ))) - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_X.data + __pyx_t_16 * __pyx_v_X.strides[0]) ) + __pyx_t_17 * __pyx_v_X.strides[1]) )))), 2.0));
       }
 
-      /* "cRBF.pyx":17
+      /* "cRBF.pyx":18
  *             for d in range(D):
  *                 r += (X[j, d] - X[i, d]) ** 2
  *             r = r**0.5             # <<<<<<<<<<<<<<
@@ -1928,7 +1928,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
  */
       __pyx_v_r = pow(__pyx_v_r, 0.5);
 
-      /* "cRBF.pyx":18
+      /* "cRBF.pyx":19
  *                 r += (X[j, d] - X[i, d]) ** 2
  *             r = r**0.5
  *             Y[i] += beta[j] * exp(-(r * theta)**2)             # <<<<<<<<<<<<<<
@@ -1943,7 +1943,7 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
       } else if (unlikely(__pyx_t_18 >= __pyx_v_beta.shape[0])) __pyx_t_11 = 0;
       if (unlikely(__pyx_t_11 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_11);
-        __PYX_ERR(0, 18, __pyx_L1_error)
+        __PYX_ERR(0, 19, __pyx_L1_error)
       }
       __pyx_t_19 = __pyx_v_i;
       __pyx_t_11 = -1;
@@ -1953,30 +1953,30 @@ static PyObject *__pyx_pf_4cRBF_rbf_network(CYTHON_UNUSED PyObject *__pyx_self, 
       } else if (unlikely(__pyx_t_19 >= __pyx_v_Y.shape[0])) __pyx_t_11 = 0;
       if (unlikely(__pyx_t_11 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_11);
-        __PYX_ERR(0, 18, __pyx_L1_error)
+        __PYX_ERR(0, 19, __pyx_L1_error)
       }
       *((double *) ( /* dim=0 */ (__pyx_v_Y.data + __pyx_t_19 * __pyx_v_Y.strides[0]) )) += ((*((double *) ( /* dim=0 */ (__pyx_v_beta.data + __pyx_t_18 * __pyx_v_beta.strides[0]) ))) * exp((-pow((__pyx_v_r * __pyx_v_theta), 2.0))));
     }
   }
 
-  /* "cRBF.pyx":20
+  /* "cRBF.pyx":21
  *             Y[i] += beta[j] * exp(-(r * theta)**2)
  * 
  *     return Y             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_Y, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_Y, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cRBF.pyx":4
+  /* "cRBF.pyx":6
  * import numpy as np
  * 
  * def rbf_network(double[:, :] X,  double[:] beta, double theta):             # <<<<<<<<<<<<<<
- * 
  *     cdef int N = X.shape[0]
+ *     cdef int D = X.shape[1]
  */
 
   /* function exit code */
@@ -14421,7 +14421,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 13, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 131, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 146, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 149, __pyx_L1_error)
@@ -14584,17 +14584,17 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "cRBF.pyx":4
+  /* "cRBF.pyx":6
  * import numpy as np
  * 
  * def rbf_network(double[:, :] X,  double[:] beta, double theta):             # <<<<<<<<<<<<<<
- * 
  *     cdef int N = X.shape[0]
+ *     cdef int D = X.shape[1]
  */
-  __pyx_tuple__14 = PyTuple_Pack(10, __pyx_n_s_X, __pyx_n_s_beta, __pyx_n_s_theta, __pyx_n_s_N, __pyx_n_s_D, __pyx_n_s_Y, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_d, __pyx_n_s_r); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(10, __pyx_n_s_X, __pyx_n_s_beta, __pyx_n_s_theta, __pyx_n_s_N, __pyx_n_s_D, __pyx_n_s_Y, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_d, __pyx_n_s_r); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 10, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_agung_Skripsi_Cython2_code, __pyx_n_s_rbf_network, 4, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 10, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_agung_Skripsi_Cython2_code, __pyx_n_s_rbf_network, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 6, __pyx_L1_error)
 
   /* "View.MemoryView":282
  *         return self.name
@@ -14795,33 +14795,34 @@ PyMODINIT_FUNC PyInit_cRBF(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cRBF.pyx":2
+  /* "cRBF.pyx":4
+ * # sebenarnya dalam python ada juga library untuk fungsi eksponen, namun yang digunakan adalah dari library bahasa C supaya performanya optimal
  * from libc.math cimport exp
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
  * def rbf_network(double[:, :] X,  double[:] beta, double theta):
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cRBF.pyx":4
+  /* "cRBF.pyx":6
  * import numpy as np
  * 
  * def rbf_network(double[:, :] X,  double[:] beta, double theta):             # <<<<<<<<<<<<<<
- * 
  *     cdef int N = X.shape[0]
+ *     cdef int D = X.shape[1]
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_4cRBF_1rbf_network, NULL, __pyx_n_s_cRBF); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_4cRBF_1rbf_network, NULL, __pyx_n_s_cRBF); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_rbf_network, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_rbf_network, __pyx_t_1) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "cRBF.pyx":1
- * from libc.math cimport exp             # <<<<<<<<<<<<<<
- * import numpy as np
- * 
+ * # import library fungsi eksponen dari library bahasa C (menggunakan libc dan sintaks cimport),             # <<<<<<<<<<<<<<
+ * # sebenarnya dalam python ada juga library untuk fungsi eksponen, namun yang digunakan adalah dari library bahasa C supaya performanya optimal
+ * from libc.math cimport exp
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

@@ -1,8 +1,9 @@
-from libc.math cimport exp 
+# import library fungsi eksponen dari library bahasa C (menggunakan libc dan sintaks cimport), 
+# sebenarnya dalam python ada juga library untuk fungsi eksponen, namun yang digunakan adalah dari library bahasa C supaya performanya optimal
+from libc.math cimport exp
 import numpy as np
 
 def rbf_network(double[:, :] X,  double[:] beta, double theta):
-
     cdef int N = X.shape[0]
     cdef int D = X.shape[1]
     cdef double[:] Y = np.zeros(N)
