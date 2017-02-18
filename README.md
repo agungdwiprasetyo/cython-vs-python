@@ -24,29 +24,54 @@ Contoh studi kasus yang akan dikerjakan yaitu mengevaluasi skema pendekatan dari
 
 ![function](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/rbf.png)
 
-Pertama buat dahulu program cython. File cython biasanya berekstensi ```*.pyx```. Program cython yang telah dibuat untuk mengevaluasi Radial Basis Function yaitu dapat dilihat pada file ```cRBF.pyx```. 
+Pertama buat dahulu program cython. File cython biasanya berekstensi ```*.pyx```. Program cython yang telah dibuat untuk mengevaluasi Radial Basis Function yaitu dapat dilihat pada file [cRBF.pyx](https://github.com/agungdwiprasetyo/cython-vs-python/blob/master/cRBF.pyx). 
 
 **cRBF.pyx**
 ```python
-from libc.math cimport exp 
+from libc.math cimport exp   # fungsi eksponen dalam library C
+from math import exp as exp2 # fungsi eksponen dalam python
 import numpy as np
 
-def rbf_network(double[:, :] X,  double[:] beta, double theta):
-    cdef int N = X.shape[0]
-    cdef int D = X.shape[1]
-    cdef double[:] Y = np.zeros(N)
-    cdef int i, j, d
-    cdef double r = 0
+cdef class Cython_vs_Python(object):
+    def Python(self, X, beta, theta): 
+        N = X.shape[0]
+        D = X.shape[1]
+        Y = np.zeros(N)
+        r = 0
 
-    for i in range(N):
-        for j in range(N):
-            r = 0
-            for d in range(D):
-                r += (X[j, d] - X[i, d]) ** 2
-            r = r**0.5
-            Y[i] += beta[j] * exp(-(r * theta)**2)
+        for i in range(N):
+            for j in range(N):
+                r = 0
+                for d in range(D):
+                    r += (X[j, d] - X[i, d]) ** 2
+                r = r**0.5
+                Y[i] += beta[j] * exp2(-(r * theta)**2)
 
-    return Y
+        return Y
+
+    cdef double[:] Cython(self, double[:, :] X,  double[:] beta, double theta):
+        cdef int N = X.shape[0]
+        cdef int D = X.shape[1]
+        cdef double[:] Y = np.zeros(N)
+        cdef int i, j, d
+        cdef double r = 0
+
+        for i in range(N):
+            for j in range(N):
+                r = 0
+                for d in range(D):
+                    r += (X[j, d] - X[i, d]) ** 2
+                r = r**0.5
+                Y[i] += beta[j] * exp(-(r * theta)**2)
+
+        return Y
+
+
+    def rbf_python(self, X, beta, theta):
+        self.Python(X, beta, theta)
+
+    def rbf_cython(self, double[:, :] X,  double[:] beta, double theta):
+        self.Cython(X, beta, theta)
 ```
 
 Untuk mengcompilenya buat dahulu file ```setup.py``` 
@@ -93,7 +118,7 @@ Langkah selanjutnya yaitu membandingkan waktu eksekusi dari program yang menggun
 Dapat dilihat pada line pertama menggunakan pure native python yang eksekusi programnya memakan waktu selama 11.3 sekon. Sedangkan pada program yang menggunakan cython pada line kedua waktu eksekusinya jauh lebih singkat yaitu 101 milisekon. Sungguh peningkatan performa yang cukup signifikan.
 
 ## Compare
-Akan dibandingkan kecepatan eksekusi dari program yang dijalankan dalam local function python, pure python dalam class cython, dan cython. Program dapat dilihat dalam file ```cRBF.pyx```. Untuk memulai perbandingan, lakukan perintah di terminal seperti berikut:
+Akan dibandingkan kecepatan eksekusi dari program yang dijalankan dalam local function python, pure python dalam class cython, dan cython. Program dapat dilihat dalam file [cRBF.pyx](https://github.com/agungdwiprasetyo/cython-vs-python/blob/master/cRBF.pyx). Untuk memulai perbandingan, lakukan perintah di terminal seperti berikut:
 ```sh
 # clone this repository
 $ git clone https://github.com/agungdwiprasetyo/cython-vs-python
@@ -112,7 +137,7 @@ Maka hasilnya seperti berikut:
 
 ![compare](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/compare.png)
 
-Dapat dilihat dari hasil diatas, fungsi dalam class yang menggunakan cython memakan waktu eksekusi yang paling singkat, karena menggunakan gaya penulisan sintaks program dan library dari bahasa C (dapat dilihat dalam file [cRBF.pyx](https://github.com/agungdwiprasetyo/cython-vs-python/blob/master/cRBF.pyx) ).
+Dapat dilihat dari hasil diatas, fungsi dalam class yang menggunakan cython memakan waktu eksekusi yang paling singkat, karena menggunakan gaya penulisan sintaks program dan library dari bahasa C.
 
 Untuk melihat interaksi antara Python dan C dalam Cython, jalankan perintah seperti berikut:
 ```sh
