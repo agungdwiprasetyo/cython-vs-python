@@ -12,7 +12,7 @@ Versi python yang digunakan adalah versi 3.5 dan sistem operasi yang digunakan a
 
 - Instal pip (jika belum ada):
 ```sh
-$ sudo apt-get install python-pip python-dev
+$ sudo apt-get install python3-pip python3-dev
 ```
 - Download whl binary file:
 ```sh
@@ -25,6 +25,8 @@ $ sudo pip3 install --upgrade $CT_BINARY_URL
 
 ## Studi Kasus
 Contoh studi kasus yang akan dikerjakan yaitu mengevaluasi skema pendekatan dari [Radial Basis Function (RBF)](http://en.wikipedia.org/wiki/Radial_basis_function). 
+
+![function](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/rbf.png)
 
 Pertama buat dahulu program cython. File cython biasanya berekstensi ```*.pyx```. Program cython yang telah dibuat untuk mengevaluasi Radial Basis Function yaitu dapat dilihat pada file ```cRBF.pyx```. 
 
