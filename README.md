@@ -115,7 +115,7 @@ Langkah selanjutnya yaitu membandingkan waktu eksekusi dari program yang menggun
 
 ![console](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/console.png)
 
-Dapat dilihat pada line pertama menggunakan pure native python yang eksekusi programnya memakan waktu selama 11.3 sekon. Sedangkan pada program yang menggunakan cython pada line kedua waktu eksekusinya jauh lebih singkat yaitu 101 milisekon. Sungguh peningkatan performa yang cukup signifikan.
+Dapat dilihat pada line pertama menggunakan pure native python yang eksekusi programnya memakan waktu selama 11.3 sekon. Sedangkan pada program yang menggunakan cython pada line kedua waktu eksekusinya jauh lebih singkat yaitu hanya 114 milisekon. Sungguh peningkatan performa yang cukup signifikan.
 
 ## Compare
 Akan dibandingkan kecepatan eksekusi dari program yang dijalankan dalam local function python, pure python dalam class cython, dan cython. Program dapat dilihat dalam file [cRBF.pyx](https://github.com/agungdwiprasetyo/cython-vs-python/blob/master/cRBF.pyx). Untuk memulai perbandingan, lakukan perintah di terminal seperti berikut:
