@@ -81,7 +81,7 @@ Dapat dilihat hasil compile program dalam bahasa mesin terdapat dalam folder ```
 Setelah sukses mengcompile, kita dapat mengimpor fungsi dalam bahasa cython tadi ke dalam program python, yaitu dengan membuat potongan program seperti berikut:
 ```python
 from cBRF import rbf_network
-# cBRF -> nama file cython yang telah dicompile
+# cRBF -> nama file cython yang telah dicompile
 # rbf_network -> nama salah satu fungsi dalam program cython tersebut
 ```
 
