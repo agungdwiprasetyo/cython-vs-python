@@ -80,9 +80,10 @@ Dapat dilihat hasil compile program dalam bahasa mesin terdapat dalam folder ```
 
 Setelah sukses mengcompile, kita dapat mengimpor fungsi dalam bahasa cython tadi ke dalam program python, yaitu dengan membuat potongan program seperti berikut:
 ```python
-from cRBF import rbf_network
+import cRBF
+rbf = cRBF.Cython_vs_Python()
 # cRBF -> nama file cython yang telah dicompile
-# rbf_network -> nama salah satu fungsi dalam program cython tersebut
+# Cython_vs_Python -> nama class dalam program cython tersebut
 ```
 
 Langkah selanjutnya yaitu membandingkan waktu eksekusi dari program yang menggunakan pure native python dengan program cython yang telah dicompile tadi. Dalam proses perbandingan ini menggunakan Jupyter Notebook (IPython). 
