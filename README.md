@@ -109,8 +109,18 @@ $ ./testSpeedup.py
 
 Maka hasilnya seperti berikut:
 
-![console](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/compare.png)
+![compare](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/compare.png)
 
 Dapat dilihat dari hasil diatas, fungsi dalam class yang menggunakan cython memakan waktu eksekusi yang paling singkat, karena menggunakan gaya penulisan sintaks program dan library dari bahasa C (dapat dilihat dalam file [cRBF.pyx](https://github.com/agungdwiprasetyo/cython-vs-python/blob/master/cRBF.pyx) ).
+
+Untuk melihat interaksi antara Python dan C dalam Cython, jalankan perintah seperti berikut:
+```sh
+$ cython cRBF.pyx -a
+```
+Akan terbentuk file **cRBF.html**. Buka file tersebut, maka seperti gambar dibawah ini:
+
+![interaction](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/interaction.png)
+
+Baris program yang berwarna kuning menandakan interaksi antara sintaks Python dan C. Semakin sedikit interaksi ini maka waktu eksekusi program akan semakin cepat.
 
 sumber -> [Cython: C-Extensions for Python](http://cython.org/)
