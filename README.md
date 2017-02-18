@@ -14,13 +14,9 @@ Versi python yang digunakan adalah versi 3.5 dan sistem operasi yang digunakan a
 ```sh
 $ sudo apt-get install python3-pip python3-dev
 ```
-- Download whl binary file:
+- Langsung install package Cython
 ```sh
-$ export CT_BINARY_URL=https://pypi.python.org/packages/11/a4/4e93591fcf898a229579b0fd02fe2fd9326b9bb3ce34ceee4a2b87937ca1/Cython-0.25.2-cp35-cp35m-manylinux1_x86_64.whl
-```
-- Install binary file yang telah didownload:
-```sh
-$ sudo pip3 install --upgrade $CT_BINARY_URL
+$ sudo python3 -m pip install cython
 ```
 
 ## Studi Kasus
