@@ -91,4 +91,26 @@ Langkah selanjutnya yaitu membandingkan waktu eksekusi dari program yang menggun
 
 Dapat dilihat pada line pertama menggunakan pure native python yang eksekusi programnya memakan waktu selama 11.3 sekon. Sedangkan pada program yang menggunakan cython pada line kedua waktu eksekusinya jauh lebih singkat yaitu 101 milisekon. Sungguh peningkatan performa yang cukup signifikan.
 
+## Compare
+Akan dibandingkan kecepatan eksekusi dari program yang dijalankan dalam local function python, pure python dalam class cython, dan cython. Program dapat dilihat dalam file ```cRBF.pyx```. Untuk memulai perbandingan, lakukan perintah di terminal seperti berikut:
+```sh
+# clone this repository
+$ git clone https://github.com/agungdwiprasetyo/cython-vs-python
+
+# change directory
+$ cd cython-vs-python
+
+# compile cRBF.pyx
+$ python3 setup.py build_ext --inplace
+
+# run program
+$ ./testSpeedup.py
+```
+
+Maka hasilnya seperti berikut:
+
+![console](https://github.com/agungdwiprasetyo/cython-vs-python/raw/master/pic/compare.png)
+
+Dapat dilihat dari hasil diatas, fungsi dalam class yang menggunakan cython memakan waktu eksekusi yang paling singkat, karena menggunakan gaya penulisan sintaks program dan library dari bahasa C (dapat dilihat dalam file **cRBF.pyx**).
+
 sumber -> [Cython: C-Extensions for Python](http://cython.org/)
